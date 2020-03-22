@@ -1,0 +1,9 @@
+analyze.compatibilityphp55 created on Sun, 15 Mar 2020 06:59:36 +0000
+Analyzing project fabapp
+Runnable analyzers	67
+Php/Php55RemovedFunctions	0.011029958724976	0	0	0	1
+Php/Password55	0.011412858963013	0	0	0	1
+Duration : 100.19
+Memory : 77594624
+Memory peak : 79691776
+analyze.compatibilityphp55 closed on Sun, 15 Mar 2020 06:59:36 +0000

@@ -1,0 +1,17 @@
+analyze.compatibilityphp72 created on Sun, 15 Mar 2020 06:59:39 +0000
+Analyzing project fabapp
+Runnable analyzers	25
+Php/Php72Deprecation	0.27563810348511	1	1386	4	7
+Php/Php72NewFunctions	0.070013999938965	0	58	1	1
+Php/Php72NewConstants	0.073092937469482	0	235	1	2
+Php/Php72ObjectKeyword	0.011023044586182	0	0	0	1
+Php/AvoidSetErrorHandlerContextArg	0.013504981994629	0	0	0	3
+Php/HashUsesObjects	0.010699987411499	0	0	0	1
+Structures/CanCountNonCountable	0.096251964569092	0	39	1	1
+Constants/CustomConstantUsage	0.15027403831482	0	1309	1	1
+Php/Php72RemovedFunctions	0.14310812950134	1	1	1	1
+Constants/UndefinedConstants	0.13045597076416	5	1309	1	1
+Duration : 1117.46
+Memory : 79691776
+Memory peak : 79691776
+analyze.compatibilityphp72 closed on Sun, 15 Mar 2020 06:59:41 +0000

@@ -1,0 +1,3 @@
+<span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><a name="l1" /></span><span style="color: #FF8000">//&nbsp;Thermal&nbsp;printer&nbsp;connection&nbsp;settings<br /><a name="l2" /></span><span style="color: #0000BB">$tphost&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"ip&nbsp;address"</span><span style="color: #007700">;<br /><a name="l3" /></span><span style="color: #0000BB">$tpport&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">9100</span><span style="color: #007700">;<br /><a name="l4" /></span><span style="color: #0000BB">?&gt;</span>
+</span>

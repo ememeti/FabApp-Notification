@@ -1,0 +1,35 @@
+analyze.preferences created on Sun, 15 Mar 2020 07:01:29 +0000
+Analyzing project fabapp
+Runnable analyzers	28
+Constants/InconsistantCase	0.15157389640808	26	519	1	5
+Structures/EchoPrintConsistance	0.2474479675293	5	2690	1	7
+Structures/ConstantComparisonConsistance	0.17137503623962	8	858	1	5
+Structures/DieExitConsistance	0.06304407119751	0	0	0	2
+Arrays/ArrayBracketConsistence	0.064013957977295	0	0	0	2
+Php/GlobalsVsGlobal	0.004863977432251	0	0	0	0
+Php/UnsetOrCast	0.063771963119507	0	0	0	3
+Php/CloseTagsConsistency	0.26208591461182	0	0	0	2
+Structures/OneExpressionBracketsConsistency	0.095982074737549	0	0	0	2
+Classes/NewOnFunctioncallOrIdentifier	0.13452005386353	0	217	1	5
+Structures/NewLineStyle	0.15365791320801	0	0	0	3
+Structures/RegexDelimiter	0.20475101470947	12	131	1	6
+Arrays/EmptyFinal	0.14030480384827	1	251	1	5
+Structures/DifferencePreference	0.070264101028442	0	0	0	2
+Structures/ConcatenationInterpolationFavorite	0.098948955535889	0	0	0	2
+Php/DeclareStrict	0.096641063690186	0	0	0	3
+Php/DeclareStrictType	0.010737895965576	0	0	0	1
+Php/DeclareEncoding	0.010703802108765	0	0	0	1
+Php/DeclareTicks	0.010621070861816	0	0	0	1
+Php/LetterCharsLogicalFavorite	0.14391708374023	3	380	1	5
+Php/ShellFavorite	0.078824996948242	0	0	0	3
+Classes/PPPDeclarationStyle	0.066147089004517	0	0	0	2
+Structures/ComparisonFavorite	0.072443008422852	0	0	0	2
+Structures/GtOrLtFavorite	0.070085048675537	0	0	0	2
+Constants/ConstDefinePreference	0.063014030456543	0	0	0	2
+Constants/DefineInsensitivePreference	0.0063011646270752	0	0	0	2
+Exceptions/CatchE	0.12713289260864	3	31	1	2
+Structures/NotOrNot	0.064703941345215	0	0	0	2
+Duration : 3140.17
+Memory : 121634816
+Memory peak : 130027520
+analyze.preferences closed on Sun, 15 Mar 2020 07:01:33 +0000

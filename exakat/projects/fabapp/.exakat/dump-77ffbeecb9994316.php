@@ -1,0 +1,27 @@
+<?php $queries = array (
+  0 => 'DELETE FROM hashResults WHERE name = \'Typehinting stats\'',
+  1 => 'INSERT INTO hashResults ("name", "key", "value") VALUES (\'Typehinting stats\', \'totalArguments\', \'723\') 
+, (\'Typehinting stats\', \'totalFunctions\', \'643\') 
+, (\'Typehinting stats\', \'withTypehint\', \'16\') 
+, (\'Typehinting stats\', \'withReturnTypehint\', \'0\') 
+, (\'Typehinting stats\', \'scalartype\', \'3\') 
+, (\'Typehinting stats\', \'returnNullable\', \'0\') 
+, (\'Typehinting stats\', \'argNullable\', \'0\') 
+, (\'Typehinting stats\', \'\\array\', \'3\') 
+, (\'Typehinting stats\', \'allTotal\', \'684\') 
+, (\'Typehinting stats\', \'allWithTypehint\', \'15\') 
+, (\'Typehinting stats\', \'allWithReturnTypehint\', \'0\') 
+, (\'Typehinting stats\', \'functionTotal\', \'58\') 
+, (\'Typehinting stats\', \'functionWithTypehint\', \'0\') 
+, (\'Typehinting stats\', \'functionWithReturnTypehint\', \'0\') 
+, (\'Typehinting stats\', \'methodTotal\', \'619\') 
+, (\'Typehinting stats\', \'methodWithTypehint\', \'15\') 
+, (\'Typehinting stats\', \'methodWithReturnTypehint\', \'0\') 
+, (\'Typehinting stats\', \'closureTotal\', \'7\') 
+, (\'Typehinting stats\', \'closureWithTypehint\', \'0\') 
+, (\'Typehinting stats\', \'closureWithReturnTypehint\', \'0\') 
+, (\'Typehinting stats\', \'arrowfunctionTotal\', \'0\') 
+, (\'Typehinting stats\', \'arrowfunctionWithTypehint\', \'0\') 
+, (\'Typehinting stats\', \'arrowfunctionWithReturnTypehint\', \'0\') 
+',
+); ?>

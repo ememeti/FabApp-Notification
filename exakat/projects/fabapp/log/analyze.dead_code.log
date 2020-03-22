@@ -1,0 +1,32 @@
+analyze.dead_code created on Sun, 15 Mar 2020 07:02:58 +0000
+Analyzing project fabapp
+Runnable analyzers	26
+Namespaces/UsedUse	0.074455976486206	46	46	1	1
+Classes/UsedMethods	0.91636204719543	510	1914	5	6
+Classes/LocallyUsedProperty	0.1712589263916	198	49	1	1
+Traits/LocallyUsedProperty	0.010236978530884	0	0	0	1
+Structures/UnusedLabel	0.01046085357666	0	0	0	1
+Interfaces/UnusedInterfaces	0.069774866104126	0	2	1	1
+Exceptions/AlreadyCaught	0.085516929626465	0	31	1	1
+Exceptions/CaughtButNotThrown	0.22107219696045	2	31	1	1
+Exceptions/Rethrown	0.068792819976807	0	31	1	1
+Traits/SelfUsingTrait	0.010197162628174	0	0	0	1
+Namespaces/UnusedUse	0.064466953277588	0	46	1	1
+Classes/UsedPrivateProperty	0.084330081939697	75	49	1	3
+Classes/UsedPrivateMethod	0.26894807815552	27	1745	4	4
+Functions/UnusedFunctions	0.21985292434692	3	174	3	5
+Constants/UnusedConstants	0.070876121520996	0	235	1	2
+Structures/UnreachableCode	0.33355903625488	13	5971	4	6
+Classes/IsInterfaceMethod	0.8986120223999	26	7428	12	19
+Classes/LocallyUnusedProperty	0.078969955444336	9	212	1	1
+Classes/UnresolvedCatch	0.13061594963074	2	62	2	2
+Classes/UsedProtectedMethod	0.076530933380127	25	49	1	1
+Functions/UselessTypeCheck	0.15764999389648	0	1368	2	2
+Classes/UnusedPrivateProperty	0.072608947753906	9	212	1	1
+Classes/UnusedPrivateMethod	0.093724012374878	0	49	1	1
+Classes/UnusedMethods	0.10168695449829	108	619	1	1
+Classes/UnusedProtectedMethods	0.067983150482178	0	619	1	1
+Duration : 4746.04
+Memory : 150994944
+Memory peak : 155189248
+analyze.dead_code closed on Sun, 15 Mar 2020 07:03:03 +0000

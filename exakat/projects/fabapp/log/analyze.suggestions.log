@@ -1,0 +1,63 @@
+analyze.suggestions created on Sun, 15 Mar 2020 07:03:12 +0000
+Analyzing project fabapp
+Runnable analyzers	86
+Variables/SelfTransform	0.27223706245422	90	2561	1	1
+Php/NewExponent	0.10840106010437	1	1	1	1
+Classes/TooManyChildren	0.076127052307129	0	49	1	2
+Structures/EmptyWithExpression	0.13373899459839	12	5306	1	1
+Php/ReturnWithParenthesis	0.076586008071899	25	560	1	1
+Arrays/ShouldPreprocess	2.7429909706116	1	10244	4	4
+Php/PregMatchAllFlag	0.011640071868896	0	0	0	2
+Namespaces/CouldUseAlias	0.28302192687988	4	692	4	11
+Functions/CouldReturnVoid	0.1824631690979	39	116	2	2
+Functions/CouldBeCallable	0.16080689430237	1	1446	2	11
+Php/UseSessionStartOptions	0.095981121063232	0	12	1	2
+Php/IssetMultipleArgs	0.14487195014954	2	760	2	2
+Structures/ShouldUseForeach	0.20677208900452	8	307	3	3
+Structures/UseListWithForeach	0.30576491355896	8	354	3	3
+Php/ShouldUseArrayFilter	0.10083389282227	3	118	1	1
+Structures/ReuseVariable	1.2889010906219	32	2561	1	1
+Structures/ShouldUseMath	0.089614868164062	0	2561	1	1
+Structures/UseCountRecursive	0.22846508026123	0	236	2	2
+Functions/TooManyParameters	0.077793121337891	2	684	1	1
+Php/ShouldPreprocess	0.10509300231934	32	60	1	1
+Structures/PossibleIncrement	0.13937187194824	0	2564	2	2
+Structures/SubstrLastArg	0.094525814056396	0	20	1	1
+Structures/OneIfIsSufficient	0.086379051208496	0	1659	1	1
+Structures/CouldUseArrayUnique	0.13939785957336	0	118	1	1
+Structures/ShouldUseOperator	0.30877590179443	71	165	3	3
+Functions/CouldBeStaticClosure	0.083298921585083	7	7	1	1
+Php/CouldUseIsCountable	0.014410018920898	0	0	0	2
+Php/AvoidReal	0.013081073760986	0	0	0	2
+Structures/JsonWithOption	0.089076042175293	0	6	1	1
+Structures/NamedRegex	0.092499971389771	0	120	1	1
+Structures/BasenameSuffix	0.011649131774902	0	0	0	4
+Structures/DontLoopOnYield	0.093741893768311	0	118	1	1
+Classes/ShouldHaveDestructor	0.099255084991455	10	49	1	1
+Structures/DirectlyUseFile	0.099413156509399	0	1	1	2
+Traits/MultipleUsage	0.010504961013794	0	0	0	1
+Functions/MultipleIdenticalClosure	0.18901419639587	3	684	2	2
+Classes/ShouldDeepClone	0.076963186264038	0	2	1	1
+Structures/MultipleUnset	0.16341710090637	5	58	2	2
+Php/ImplodeOneArg	0.096050977706909	3	12	1	1
+Structures/NoNeedGetClass	0.067759037017822	0	730	1	1
+Structures/SubstrToTrim	0.28267693519592	3	60	3	3
+Variables/ComplexDynamicNames	0.090797901153564	0	5706	1	3
+Constants/CouldBeConstant	0.30143594741821	3	8552	1	1
+Php/UseDateTimeImmutable	0.079461097717285	3	217	1	2
+Structures/SetAside	0.19122791290283	1	733	2	4
+Structures/UseArrayFunctions	0.26444602012634	45	612	4	4
+Structures/UseCaseValue	0.078458070755005	0	5	1	1
+Structures/FunctionPreSubscripting	0.14635300636292	71	2561	1	2
+Classes/UnitializedProperties	0.11146402359009	97	207	1	1
+Structures/CouldUseCompact	0.10241293907166	4	251	1	2
+Structures/CouldUseArrayFillKeys	0.43214678764343	4	254	5	5
+Functions/AddDefaultValue	0.099897146224976	1	684	1	1
+Exceptions/CouldUseTry	0.38310503959656	7	903	6	8
+Functions/UselessDefault	0.096996068954468	7	684	1	2
+Functions/UselessArgument	0.15580701828003	0	684	1	3
+Structures/UseUrlQueryFunctions	0.095876932144165	0	40	1	1
+Duration : 12504.83
+Memory : 155189248
+Memory peak : 155189248
+analyze.suggestions closed on Sun, 15 Mar 2020 07:03:24 +0000

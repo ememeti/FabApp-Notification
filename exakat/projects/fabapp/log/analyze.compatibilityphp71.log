@@ -1,0 +1,14 @@
+analyze.compatibilityphp71 created on Sun, 15 Mar 2020 06:59:38 +0000
+Analyzing project fabapp
+Runnable analyzers	33
+Structures/NoSubstrOne	0.1733980178833	2	40	2	2
+Php/BetterRand	0.18408894538879	4	11	2	2
+Php/Php71RemovedDirective	0.011380910873413	0	0	0	1
+Php/Php71NewFunctions	0.10151505470276	0	58	1	1
+Php/Php71microseconds	0.078012943267822	0	858	1	2
+Extensions/Extmcrypt	0.086463928222656	0	1309	1	2
+Arrays/StringInitialization	0.34059691429138	2	6182	3	3
+Duration : 1134.44
+Memory : 79691776
+Memory peak : 79691776
+analyze.compatibilityphp71 closed on Sun, 15 Mar 2020 06:59:39 +0000

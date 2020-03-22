@@ -1,0 +1,15 @@
+analyze.compatibilityphp73 created on Sun, 15 Mar 2020 06:59:41 +0000
+Analyzing project fabapp
+Runnable analyzers	14
+Php/UnknownPcre2Option	0.46292996406555	0	524	4	16
+Complete/CreateCompactVariables	0.011716842651367	0	0	0	1
+Constants/CaseInsensitiveConstants	0.014662027359009	0	0	0	1
+Php/AssertFunctionIsReserved	0.011973142623901	0	0	0	1
+Structures/DontReadAndWriteInOneExpression	0.17829608917236	4	2561	1	1
+Php/IntegerSeparatorUsage	0.077769994735718	0	1190	1	1
+Php/CompactInexistant	0.011034965515137	0	0	0	1
+Php/Php73RemovedFunctions	0.010642051696777	0	0	0	1
+Duration : 949.08
+Memory : 79691776
+Memory peak : 79691776
+analyze.compatibilityphp73 closed on Sun, 15 Mar 2020 06:59:42 +0000

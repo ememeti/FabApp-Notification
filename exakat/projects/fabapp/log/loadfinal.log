@@ -1,0 +1,45 @@
+loadfinal created on Sun, 15 Mar 2020 06:58:42 +0000
+Start
+Exakat\Tasks\LoadFinal\LoadFinal::addReturnedVoid
+addReturnedVoid
+Exakat\Tasks\LoadFinal\LoadFinal::removeInterfaceToClassExtends
+Exakat\Tasks\LoadFinal\LoadFinal::removeInterfaceToClassExtends
+Exakat\Tasks\LoadFinal\LoadFinal::removeInterfaceToClassExtends
+Exakat\Tasks\LoadFinal\LoadFinal::removeInterfaceToClassExtends
+removeInterfaceToClassExtends
+Exakat\Tasks\LoadFinal\LoadFinal::fixFullnspathFunctions
+fixFullnspathFunctions
+SpotPHPNativeFunctions
+Spot Extensions Native Functions
+spotFallbackConstants
+FixFullnspathConstants
+spotPHPNativeConstants
+FinishIsModified
+IsInIgnoredDir
+Duration : 4670.79
+Memory : 69206016
+Memory peak : 69206016
+loadfinal closed on Sun, 15 Mar 2020 06:58:47 +0000
+: 69206016
+Memory peak : 69206016
+loadfinal closed on Sun, 15 Mar 2020 06:58:45 +0000
+loadfinal resuming on Sun, 15 Mar 2020 06:58:45 +0000
+Duration : 292.19
+Memory : 69206016
+Memory peak : 69206016
+loadfinal closed on Sun, 15 Mar 2020 06:58:45 +0000
+loadfinal resuming on Sun, 15 Mar 2020 06:58:45 +0000
+Duration : 494.09
+Memory : 69206016
+Memory peak : 69206016
+loadfinal closed on Sun, 15 Mar 2020 06:58:46 +0000
+loadfinal resuming on Sun, 15 Mar 2020 06:58:46 +0000
+Duration : 1270.03
+Memory : 69206016
+Memory peak : 69206016
+loadfinal closed on Sun, 15 Mar 2020 06:58:47 +0000
+loadfinal resuming on Sun, 15 Mar 2020 06:58:47 +0000
+Duration : 0.97
+Memory : 69206016
+Memory peak : 69206016
+loadfinal closed on Sun, 15 Mar 2020 06:58:47 +0000

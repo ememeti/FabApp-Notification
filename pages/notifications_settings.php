@@ -124,8 +124,8 @@ $device_mats = Materials::getDeviceMats(2);
                     if(isset($_POST['sendmail'])) {
                         require '../vendor/phpmailer/PHPMailerAutoload.php';
 
-                        define('EMAIL', 'memeti.endrit@gmail.com');
-                        define('PASS', 'ME245767');
+                        define('EMAIL', ''); // add personal details of the sender's email
+                        define('PASS', ''); // add personal details of the sender's email password
 
                         $mail = new PHPMailer;
 

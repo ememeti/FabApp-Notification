@@ -1,1 +1,0 @@
-org.apache.tinkerpop:neo4j-gremlin:3.4.3

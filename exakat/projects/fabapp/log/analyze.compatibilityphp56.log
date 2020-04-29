@@ -1,8 +1,0 @@
-analyze.compatibilityphp56 created on Sun, 15 Mar 2020 06:59:36 +0000
-Analyzing project fabapp
-Runnable analyzers	56
-Php/RawPostDataUsage	0.011075019836426	0	0	0	1
-Duration : 24.46
-Memory : 77594624
-Memory peak : 79691776
-analyze.compatibilityphp56 closed on Sun, 15 Mar 2020 06:59:36 +0000

@@ -1,9 +1,0 @@
-analyze.compatibilityphp54 created on Sun, 15 Mar 2020 06:59:35 +0000
-Analyzing project fabapp
-Runnable analyzers	75
-Php/Php54RemovedFunctions	0.010790109634399	0	0	0	1
-Extensions/Extmhash	0.084084987640381	0	1309	1	2
-Duration : 223.51
-Memory : 77594624
-Memory peak : 77594624
-analyze.compatibilityphp54 closed on Sun, 15 Mar 2020 06:59:35 +0000

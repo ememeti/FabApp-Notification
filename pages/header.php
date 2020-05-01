@@ -374,10 +374,14 @@
 									</li>
 								</ul>
 							</li>
-						<?php } ?>
-						<li>
-							<a href="/pages/notifications.php"><i class="fas fa-ticket-alt"></i> Notification</a>
-						</li>
+						<?php } 
+						if (isset($staff) && $staff->getRoleID() >= 3) {
+						?>
+							<li>
+								<a href="/pages/notifications.php"><i class="fas fa-ticket-alt"></i> Notification</a>
+							</li>
+						<?php }
+						?>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->

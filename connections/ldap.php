@@ -21,8 +21,8 @@ function AuthenticateUser($netid, $password) {
             return "1000000009";
         case "admin":
             return "1000000010";
-        default:
-            return "1000000001";
+        // default:
+        //     return "1000000001";
     }
 }
 ?>

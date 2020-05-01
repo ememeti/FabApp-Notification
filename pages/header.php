@@ -374,10 +374,14 @@
 									</li>
 								</ul>
 							</li>
-						<?php } ?>
-						<li>
-							<a href="/pages/notifications.php"><i class="fas fa-ticket-alt"></i> Notification</a>
-						</li>
+						<?php } 
+						if (isset($staff)) {
+						?>
+							<li>
+								<a href="/pages/notifications.php"><i class="fas fa-ticket-alt"></i> Notifications</a>
+							</li>
+						<?php }
+						?>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->

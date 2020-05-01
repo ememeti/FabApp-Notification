@@ -16,6 +16,13 @@ $auto_off = true;
 //Retrive all Materials available for the PolyPrinter
 $device_mats = Materials::getDeviceMats(2);
 
+if (!isset($staff)) {
+    //Not Authorized to see this Page
+    $_SESSION['error_msg'] = "You are unable to view this page.";
+    header('Location: /index.php');
+    exit();
+}
+
 ?>
 
 <!-- Title on the tab -->

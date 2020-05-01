@@ -378,7 +378,7 @@
 						if (isset($staff)) {
 						?>
 							<li>
-								<a href="/pages/notifications.php"><i class="fas fa-ticket-alt"></i> Notification</a>
+								<a href="/pages/notifications.php"><i class="fas fa-ticket-alt"></i> Notifications</a>
 							</li>
 						<?php }
 						?>

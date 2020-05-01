@@ -375,7 +375,7 @@
 								</ul>
 							</li>
 						<?php } 
-						if (isset($staff) && $staff->getRoleID() >= 3) {
+						if (isset($staff)) {
 						?>
 							<li>
 								<a href="/pages/notifications.php"><i class="fas fa-ticket-alt"></i> Notification</a>

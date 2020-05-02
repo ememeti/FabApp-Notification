@@ -228,6 +228,30 @@ class Users {
 		}
 		return $tickets;
 	}
+
+	//get most recently started ticket
+	public function recentTicket(){
+		// global $ticketz, $datetime1, $ticknum, $tickn;
+		$ticketz = $this->history();
+		$datetime1 = new DateTime($ticketz[0][2]); 
+		// echo $datetime1->format('Y-m-d H:i:s');
+		
+		$tickert = $ticketz[0];
+
+		foreach ($ticketz as $tick){
+			$datetime2= new DateTime($tick[2]);
+			// echo $datetime2->format('Y-m-d H:i:s');
+
+			if ($datetime2 > $datetime1){
+				$datetime1 = $datetime2;
+				$tickert = $tick;
+			}
+			
+		}
+		
+		return $tickert;
+
+	}
 	
 	public function insertRFID($staff, $rfid_no){
 		global $mysqli;

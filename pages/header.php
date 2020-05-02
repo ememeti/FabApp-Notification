@@ -176,7 +176,8 @@
 						<!-- /.dropdown-login -->
 					</li>
 					<!--php class Staff if logged in-->
-				<?php } else { ?>
+				<?php } else { 
+					$recTicket = $staff->recentTicket();?>
 					<!-- notifications dropdown menu start -->
 					<li class="dropdown">
 						<ul>
@@ -184,8 +185,8 @@
 								<i class="fa fa-exclamation-circle fa-2x"></i> <i class="fas fa-caret-down"></i>
 							</a>
 							<ul class="dropdown-menu dropdown-user" style="width:350px;">
-								<!-- notifcation header -->
-								<li><a style="background-color:black;color:white;text-align:center;">NOTIFICATIONS</a></li>
+								<!-- notification header -->
+								<li><a style="background-color:black;color:white;text-align:center;">Notifications</a></li>
 
 								<!-- wait queue info body -->
 								<li><a href="#" style="text-align:left">Wait Queue: Now</a></li>
@@ -195,10 +196,11 @@
 								<li class="divider"></li>
 
 								<!-- balance info body -->
-								<li><a href="#" style="text-align:left">Balance: 2 hours ago</a></li>
+								<li><a href="#" style="text-align:left">Recent Ticket: <?php echo $recTicket[0];?></a></li>
 								<li class="text-center">
-									<a style="text-align:center">Ticket 49,999: 2nd in Line: ETA 5min</a>
+									<a style="text-align:center">Status: <?php echo $recTicket[3];?>   Balance: <?php echo $recTicket[4];?> </a>
 								</li>
+
 								<li class="divider"></li>
 
 								<!-- 3d print status info body -->
@@ -214,7 +216,7 @@
 								</li>
 							</ul>
 						</li>
-						<!-- notifcation body end -->
+						<!-- notification body end -->
 
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">

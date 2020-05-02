@@ -46,6 +46,37 @@ $operator = $staff -> getOperator();
     <!-- /.row 1 end -->
 
     <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fas fa-ticket-alt fa-fw"></i> Ticket Balances
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-bordered table-hover" id="ticketsTable">
+                        <thead>
+                            <tr class="tablerow">
+                                <th align="right">Ticket</th>
+                                <th>Device</th>
+                                <th>Start Time</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <?php foreach ($staff->history() as $ticket){ ?>
+                            <tr>
+                                <td align="Center"><a href="/pages/lookup.php?trans_id=<?php echo $ticket[0];?>"><?php echo $ticket[0];?></a></td>
+                                <td><?php echo $ticket[1];?></td>
+                                <td><?php echo $ticket[2];?></td>
+                                <td><?php echo $ticket[3];?></td>
+                                <td><?php echo $ticket[4];?></td>
+                            </tr>
+                        <?php }?>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    <div class="row">
     <?php if (Wait_queue::isOperatorWaiting($operator)) { ?>
         <div class="col-md-8">
             <div class="panel panel-default">

@@ -4,6 +4,8 @@ class Notifications {
     private $phone_num;
     private $email;
     private $last_contacted;
+    private $mail;
+    
     
     public static function listCarriers(){
         global $mysqli;
@@ -26,6 +28,7 @@ class Notifications {
 
     public static function sendNotification($q_id, $subject, $message, $markContact) {
         global $mysqli;
+        
         $hasbeenContacted = $setLastContacted = false;
         // This function queries the carrier table and sends an email to all combinations
 
@@ -83,14 +86,39 @@ class Notifications {
     }
     
     public static function SendMail($to, $subject, $message){
-        $headers =  'From: no-reply@fablab.uta.edu' . "\r\n".
-                    'Reply-To: no-reply@fablab.uta.edu' . "\r\n".
-                    'X-Mailer: PHP/' . phpversion();
-        if ( mail($to, $subject, $message, $headers) ){
+        // $headers =  'From: no-reply@fablab.uta.edu' . "\r\n".
+        //             'Reply-To: no-reply@fablab.uta.edu' . "\r\n".
+        //             'X-Mailer: PHP/' . phpversion();
+        // if ( mail($to, $subject, $message, $headers) ){
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+
+       
+
+        require_once(realpath($_SERVER["DOCUMENT_ROOT"]) .'/vendor/phpmailer/PHPMailerAutoload.php');
+        $mail = new PHPMailer;
+
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'fabblabtest@gmail.com';            
+        $mail->Password = 'Fablab123';
+        $mail->SMTPSecure = 'tls'; 
+        $mail->Port = 587;
+
+        $mail->addAddress($to);
+        $mail->addReplyTo('fabblabtest@gmail.com');
+
+        $mail->Subject = $subject;
+        $mail->Body    = $message;
+
+        if($mail->send()) {
             return true;
-        } else {
-            return false;
         }
+        else
+            return false;
     }
     
     public static function setLastNotified($q_id){

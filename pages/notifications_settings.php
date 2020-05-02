@@ -122,43 +122,45 @@ $device_mats = Materials::getDeviceMats(2);
             <form method="post"> 
                 <?php
                     if(isset($_POST['sendmail'])) {
-                        require '../vendor/phpmailer/PHPMailerAutoload.php';
+                        // require '../vendor/phpmailer/PHPMailerAutoload.php';
 
-                        define('EMAIL', ''); // add personal details of the sender's email
-                        define('PASS', ''); // add personal details of the sender's email password
+                        // define('EMAIL', ''); // add personal details of the sender's email
+                        // define('PASS', ''); // add personal details of the sender's email password
 
-                        $mail = new PHPMailer;
+                        // $mail = new PHPMailer;
 
-                        $mail->SMTPDebug = 4;                                 // Enable verbose debug output
+                        // $mail->SMTPDebug = 4;                                 // Enable verbose debug output
 
-                        $mail->isSMTP();                                      // Set mailer to use SMTP
-                        $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
-                        $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                        $mail->Username = EMAIL;                              // SMTP username
-                        $mail->Password = PASS;                               // SMTP password
-                        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                        $mail->Port = 587;                                   // TCP port to connect to
+                        // $mail->isSMTP();                                      // Set mailer to use SMTP
+                        // $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+                        // $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                        // $mail->Username = EMAIL;                              // SMTP username
+                        // $mail->Password = PASS;                               // SMTP password
+                        // $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                        // $mail->Port = 587;                                   // TCP port to connect to
 
-                        $mail->setFrom(EMAIL, 'Email Test');
-                        //$mail->addAddress($_POST['exampleInputEmail1']);     // Add a recipient
-                        $mail->addAddress('memeti.endrit@gmail.com');
+                        // $mail->setFrom(EMAIL, 'Email Test');
+                        // //$mail->addAddress($_POST['exampleInputEmail1']);     // Add a recipient
+                        // $mail->addAddress('memeti.endrit@gmail.com');
 
-                        $mail->addReplyTo(EMAIL);
+                        // $mail->addReplyTo(EMAIL);
 
-                        //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-                        //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-                        $mail->isHTML(true);                                  // Set email format to HTML
+                        // //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+                        // //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+                        // $mail->isHTML(true);                                  // Set email format to HTML
 
-                        $mail->Subject = 'Here is the subject';
-                        $mail->Body    = '<div style="border:2px solid red;"This is the HTML message body <b>in bold!</b></div>';
-                        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+                        // $mail->Subject = 'Here is the subject';
+                        // $mail->Body    = '<div style="border:2px solid red;"This is the HTML message body <b>in bold!</b></div>';
+                        // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-                        if(!$mail->send()) {
-                            echo 'Message could not be sent.';
-                            echo 'Mailer Error: ' . $mail->ErrorInfo;
-                        } else {
-                            echo 'Message has been sent';
-                        }
+                        // if(!$mail->send()) {
+                        //     echo 'Message could not be sent.';
+                        //     echo 'Mailer Error: ' . $mail->ErrorInfo;
+                        // } else {
+                        //     echo 'Message has been sent';
+                        // }
+
+                        Notifications::sendNotification('1564', 'Test Subject', 'Test Message', 1);
                     }
                 ?>
                 <input type="submit" name="sendmail" class="btn btn-lg btn-success btn-block pull-right" value="Send Mail"/>

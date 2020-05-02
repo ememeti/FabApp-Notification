@@ -175,7 +175,49 @@
 						</ul>
 						<!-- /.dropdown-login -->
 					</li>
-					<!--php class Staff if logged in-->
+					<!--php class service if logged in, displays top 5 open service tickets-->
+				<?php } elseif ($staff->getRoleID() == 7) { 
+					$numts = 0?>
+				<li class="dropdown">
+						<ul>
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								<i class='far fa-comment fa-2x'></i> <i class="fas fa-caret-down"></i>
+							</a>
+							<ul class="dropdown-menu dropdown-user" style="width:350px;">
+								<!-- notification header -->
+								<li><a style="background-color:black;color:white;text-align:center;">Open Service Tickets</a></li>
+
+								<?php foreach(Service_call::openSC() as $row) { ?>
+								<!-- wait queue info body -->
+								<li><a href="#" style="text-align:left">Device: <?php echo $row['device_desc'];  ?></a></li>
+								<li>
+									 <a>Opened: <?php echo date($sv['dateFormat'], strtotime($row["sc_time"])); ?> </a>
+								</li>
+								<li>
+									<a>Notes: <?php echo $row['sc_notes']; ?>  </a>
+								</li>
+								<li class="divider"></li>
+
+								<?php if (++$i == 5) break;} ?>
+
+								<!-- button to change notification settings -->
+								<li>
+									<a href="/pages/notifications_settings.php" style="text-align:center">Change Notifications for Tickets</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								<i class="<?php echo $staff->getIcon(); ?> fa-2x"></i> <i class="fas fa-caret-down"></i>
+							</a>
+							<ul class="dropdown-menu dropdown-user">
+								<li><a href="/pages/info.php" onclick="loadingModal()"><i class="fas fa-info"></i> Information</a></li>
+								<li class="divider"></li>
+								<li><a href="/logout.php?n=n" onclick="loadingModal()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+							</ul>
+						<!-- /.dropdown-user -->
+						</ul>
+					</li>
 				<?php } else { 
 					$recTicket = $staff->recentTicket();?>
 					<!-- notifications dropdown menu start -->

@@ -140,7 +140,7 @@ $operator = $staff -> getOperator();
                                                         SELECT *
                                                         FROM wait_queue WQ JOIN device_group DG ON WQ.devgr_id = DG.dg_id
                                                         LEFT JOIN devices D ON WQ.Dev_id = D.d_id
-                                                        WHERE valid = 'Y' and WQ.devgr_id=$tab[dg_id]
+                                                        WHERE valid = 'Y' and WQ.devgr_id=$tab[dg_id] and WQ.Operator = $operator
                                                         ORDER BY Q_id;
                                                 ")) {
                                                     while ($row = $result->fetch_assoc()) { ?>

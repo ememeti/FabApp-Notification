@@ -97,7 +97,7 @@ class Notifications {
 
        
 
-        require_once '../vendor/phpmailer/PHPMailerAutoload.php';
+        require_once(realpath($_SERVER["DOCUMENT_ROOT"]) .'/vendor/phpmailer/PHPMailerAutoload.php');
         $mail = new PHPMailer;
 
         $mail->isSMTP();

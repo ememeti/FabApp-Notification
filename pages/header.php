@@ -181,7 +181,7 @@
 				<li class="dropdown">
 						<ul>
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="fa fa-exclamation-circle fa-2x"></i> <i class="fas fa-caret-down"></i>
+								<i class='far fa-comment fa-2x'></i> <i class="fas fa-caret-down"></i>
 							</a>
 							<ul class="dropdown-menu dropdown-user" style="width:350px;">
 								<!-- notification header -->

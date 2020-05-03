@@ -231,11 +231,32 @@
 								<li><a style="background-color:black;color:white;text-align:center;">Notifications</a></li>
 
 								<!-- wait queue info body -->
-								<li><a href="#" style="text-align:left">Wait Queue: Now</a></li>
-								<li class="text-center">
-									<a style="text-align:center">2nd in Line: ETA 5min</a>
+								<li><a href="#" style="text-align:left">  Wait Queue
+								<?php $operator = $staff->getOperator();
+								if ($result = $mysqli->query("
+											SELECT *
+                                                        FROM wait_queue WQ JOIN device_group DG ON WQ.devgr_id = DG.dg_id
+                                                        LEFT JOIN devices D ON WQ.Dev_id = D.d_id
+														WHERE valid = 'Y' and WQ.Operator = $operator
+														ORDER BY Q_id;
+										")) {
+                                $count = 0;
+                                while ($row = $result->fetch_assoc()) { ?></a></li>
+								<li>
+									<a>Queue Number: <?php echo($row['Q_id']) ?></a>
 								</li>
+
+								<li>
+									<a>Device: <?php echo($row['device_desc']) ?></a>
+								</li>
+
 								<li class="divider"></li>
+
+								<?php if (++$count ==2)
+									break;
+							} }?>
+								
+
 
 								<!-- balance info body -->
 								<li><a href="#" style="text-align:left">Recent Ticket: <?php echo $recTicket[0];?></a></li>

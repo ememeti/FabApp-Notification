@@ -12,9 +12,19 @@
  ***********************************************************************************************************/
 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/pages/header.php');
-$auto_off = true;
+
+if (!$staff){
+    //Not Authorized to see this Page
+    $_SESSION['error_msg'] = "You are unable to view this page.";
+    header('Location: /index.php');
+    exit();
+}
+
+$auto_off = true; ///try changing this
 //Retrive all Materials available for the PolyPrinter
 $device_mats = Materials::getDeviceMats(2);
+
+
 
 ?>
 

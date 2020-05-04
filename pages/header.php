@@ -232,6 +232,8 @@
 
 								<!-- wait queue info body -->
 								<li><a href="#" style="text-align:left">  Wait Queue
+								<li class="divider"></li>
+
 								<?php $operator = $staff->getOperator();
 								if ($result = $mysqli->query("
 											SELECT *
@@ -259,12 +261,22 @@
 
 
 								<!-- balance info body -->
-								<li><a href="#" style="text-align:left">Recent Ticket: <?php echo $recTicket[0];?></a></li>
+								<?php if(isset($recTicket)){ ?>
+								<li><a href="#" style="text-align:left">Most Recent Ticket: <?php echo $recTicket[0];?></a></li>
 								<li class="text-center">
-									<a style="text-align:center">Status: <?php echo $recTicket[3];?>   Balance: <?php echo $recTicket[4];?> </a>
+									<a style="text-align:center">Status: <?php echo $recTicket[3]; if(isset($recTicket[4])){?>   Balance: <?php echo $recTicket[4];}?> </a>
 								</li>
 
 								<li class="divider"></li>
+								<?php } 
+								foreach($staff->history() as $ro){ ?>
+								<li><a href="#" style="text-align:left"> Ticket # <?php echo $ro[0];?></a></li>
+								<li class="text-center">
+									<a style="text-align:center">Status: <?php echo $ro[3]; if(isset($ro[4])){?>   Balance: <?php echo $ro[4];}?> </a>
+								</li>
+								<li class="divider"></li>
+								<?php } ?>
+
 
 								<!-- 3d print status info body -->
 								<li><a href="#" style="text-align:left">3D Print Status: 3 hours ago</a></li>

@@ -93,7 +93,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ticketBtn'])) {
 	// purpose
 	$p_id = filter_input(INPUT_POST, 'p_id');
 	if(!Purpose::regexID($p_id)) exit_if_error("Invalid Purpose Code : $p_id");
-	
+
+	//create alert
+	$email = filter_input(INPUT_POST, 'op-email');
+	$phone = filter_input(INPUT_POST, 'op-phone');
+	$carrier = filter_input(INPUT_POST, 'carrier_name');
+
+	Alerts::newAlert($operator->operator, $device->device_id, $phone, $carrier, $email);
+
 	// start ticket
 	if($device->device_group->is_pay_first) pay_first_ticket($operator, $device, $p_id, $staff);
 	elseif($device->device_group->is_select_mats_first) select_materials_first_ticket($operator, $device, $p_id, $staff);
@@ -369,6 +376,37 @@ function exit_if_error($error, $redirect=null) {
 										</td>
 									</tr>
 								<?php } ?>
+								<tr>
+									<td><a href="#" data-toggle="tooltip" data-placement="top" title="The email of the person that you will issue a ticket for">(Optional) Email</a></td>
+									<td><input type="text" name="op-email" id="op-email" class="form-control" placeholder="email address" maxlength="100" size="10" value="<?php echo $em1;?>" tabindex="1"/></td>
+								</tr>
+								<tr>
+									<td>
+										<a href="#" data-toggle="tooltip" data-placement="top" title="The phone number of person that you will issue a ticket for">(Optional) Phone</a>
+									</td>
+									<td>
+										<div class="col-md-6">
+											<input type="text" name="op-phone" id="op-phone" class="form-control" placeholder="phone number" maxlength="10" size="10" value="<?php echo $ph1;?>" tabindex="1"/>
+										</div>
+										<div class="col-md-6">
+											<select class="form-control" name="carrier_name" id="carrier_name" tabindex="1">
+												<option value="" disabled selected>Select Phone Carrier</option>
+												<?php 
+													if ($result = $mysqli->query("
+															SELECT `provider`
+															FROM `carrier` 
+															WHERE 1;
+													")) {
+														while ( $rows = mysqli_fetch_array ( $result ) ) {
+															echo "<option value=". $rows ['provider'] .">" . $rows ['provider'] . "</option>";
+														}
+													} else {
+														die ("There was an error loading the phone carriers.");
+													} ?> 
+											</select>
+										</div>
+									</td>
+                        		</tr>
 								<tr class="tablerow">
 									<td align="center"><input type="button" class='btn btn-default' onclick="resetForm()" value="Reset form"></td>
 									<td align="right"><input type="submit" name="ticketBtn" value="Submit" class='btn btn-default' tabindex="9"></td>

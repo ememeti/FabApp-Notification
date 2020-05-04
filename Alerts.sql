@@ -7,6 +7,7 @@ CREATE TABLE `alerts` (
   `dev_id` int(11) NOT NULL,
   `Operator` char(10) NOT NULL,
   `Start_date` datetime DEFAULT NULL,
+  `valid` enum('Y', 'N') DEFAULT 'Y',
   `Op_email` varchar(100) DEFAULT NULL,
   `Op_phone` char(10) DEFAULT NULL,
   `carrier` varchar(50) DEFAULT NULL

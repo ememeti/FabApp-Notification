@@ -10,6 +10,66 @@ class Alerts{
         global $mysqli;
         //add regex
 
+        if( self::inAlerts($operator, $d_id))
+        {
+            echo 'I am in alerts!!!';
+            if(!isset($phone) && !isset($email))
+            {
+                if ($mysqli->query("
+                    UPDATE `alerts`
+                    SET `valid` = 'Y',  `Start_date` = CURRENT_TIMESTAMP,  `t_id` = NULL
+                    WHERE `Operator` = $operator AND `dev_id` = $d_id;
+                ")){
+                return;
+                } else {
+                    return ("<div class='alert alert-danger'>Error adding alert!</div>");
+                }
+
+            }
+            elseif(!isset($phone))
+            {
+                if ($mysqli->query("
+                    UPDATE `alerts`
+                    SET `valid` = 'Y',  `Start_date` = CURRENT_TIMESTAMP,  `t_id` = NULL, `Op_phone`=$phone, `carrier` = $carrier
+                    WHERE `Operator` = $operator AND `dev_id` = $d_id;
+                ")){
+                return;
+                } else {
+                    return ("<div class='alert alert-danger'>Error adding alert!</div>");
+                }
+
+            }
+            elseif(!isset($email))
+            {
+                if ($mysqli->query("
+                    UPDATE `alerts`
+                    SET `valid` = 'Y',  `Start_date` = CURRENT_TIMESTAMP,  `t_id` = NULL, `Op_email`=$email
+                    WHERE `Operator` = $operator AND `dev_id` = $d_id;
+                ")){
+                return;
+                } else {
+                    return ("<div class='alert alert-danger'>Error adding alert!</div>");
+                }
+
+            }
+            else
+            {
+                if ($mysqli->query("
+                    UPDATE `alerts`
+                    SET `valid` = 'Y',  `Start_date` = CURRENT_TIMESTAMP,  `t_id` = NULL, `Op_phone`=$phone, `carrier` = $carrier, `Op_email`=$email
+                    WHERE `Operator` = $operator AND `dev_id` = $d_id;
+                ")){
+                return;
+                } else {
+                    return ("<div class='alert alert-danger'>Error adding alert!</div>");
+                }
+
+            }
+            
+        }
+
+
+
         if ($mysqli->query("
                 INSERT INTO alerts 
                   (`dev_id`, `Operator`, `Start_date`, `Op_email`, `Op_phone`, `carrier`) 
@@ -40,7 +100,7 @@ class Alerts{
 
     }
 
-    public static function removeAlertWiithTrans($trans_id){
+    public static function removeAlertWithTrans($trans_id){
         global $mysqli;
 
         if ($result = $mysqli->query("
@@ -112,6 +172,14 @@ class Alerts{
             }
     
         }
+    }
+
+    public static function inAlerts($op, $de_id){
+        global $mysqli;
+        return mysqli_num_rows($mysqli->query(" 
+                                SELECT * 
+                                FROM `alerts` 
+                                WHERE `Operator`=$op AND `dev_id`=$de_id;"))>0;
     }
 }
 ?>

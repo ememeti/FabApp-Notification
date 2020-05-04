@@ -179,18 +179,19 @@ class Wait_queue {
         //if id && d_id are in wait_queue table
         //elseif id &&dg_id are in wait_queue table
         if ($result = $mysqli->query("
-                SELECT `Q_id`
+                SELECT `Q_id`, `Op_phone`, `carrier`, `Op_email`
                 FROM `wait_queue`
                 WHERE `Operator` = '$operator' AND `valid` = 'Y' AND `Dev_id` = '$d_id';
         ")){
             if($result->num_rows == 1) {
                 $row = $result->fetch_assoc();
                 $q_id = $row['Q_id'];
+                Alerts::newAlert($operator, $d_id, $row['Op_phone'], $row['carrier'], $row['Op_email']);
             } elseif($result->num_rows == 0) {
                 // The operator + d_id combination does not exist, lets try to get the device group number and check if that combination is present in wait queue
                 // check if the user has a valid wait ticket for that device group
                 if ($result = $mysqli->query("
-                    SELECT `Q_id`
+                    SELECT `Q_id`, `Op_phone`, `carrier`, `Op_email`
                     FROM `wait_queue`
                     LEFT JOIN `devices`
                     ON `devices`.`dg_id` = `wait_queue`.`Devgr_id`
@@ -199,6 +200,7 @@ class Wait_queue {
                     if($result->num_rows == 1) {
                         $row = $result->fetch_assoc();
                         $q_id = $row['Q_id'];
+                        Alerts::newAlert($operator, $d_id, $row['Op_phone'],  $row['carrier'],  $row['Op_email']);
                     } else {
                         return;
                     }

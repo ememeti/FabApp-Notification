@@ -159,7 +159,9 @@ class Transactions {
 		if($staff->operator == $this->user->operator && $staff->getRoleID() < $sv['editTrans'])
 			return "Please ask a fellow staff member to close this ticket.";
 
+
 		$this->t_end = date("Y-m-d H:i:s");
+		Alerts::removeAlertWiithTrans($this->trans_id);
 		return $this->update_transaction();  // return error or null (no error)
 	}
 	
@@ -250,7 +252,9 @@ class Transactions {
 							VALUES
 							('$operator->operator', '$device_id', CURRENT_TIMESTAMP, $t_end, '$status_id', '$p_id', '$est_time', '$staff->operator', $note);"
 		)){
-			return $mysqli->insert_id;
+			$t_id = $mysqli->insert_id;
+			Alerts::attachTran($operator->operator, $device_id, $t_id);
+			return $t_id;
 		}
 		return $mysqli->error;
 	}

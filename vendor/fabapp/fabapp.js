@@ -136,6 +136,17 @@ function sendManualMessage(q_id, message, loc){
     }
 }
 
+function sendAlertMessage(t_id, message, loc) {
+    if (confirm("You are about to send a notification to a Transaction user. Click OK to continue or CANCEL to quit.")) {
+        if (loc == 0) {
+            window.location.href = "/pages/sub/sendAlert.php?t_id=" + t_id + "&message=" + message + "&loc=0";
+        }
+        else if (loc == 1) {
+            window.location.href = "/pages/sub/sendAlert.php?t_id=" + t_id + "&message=" + message + "&loc=1";
+        }
+    }
+}
+
 function startTimer(duration, display) {
     var timer = duration, hours, minutes, seconds;
     setInterval(function () {

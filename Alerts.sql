@@ -30,3 +30,9 @@ ADD
 ALTER TABLE `alerts`
 MODIFY
   `A_id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+
+ALTER TABLE 'users'
+ADD
+  'a_set' varchar(5) DEFAULT '';

@@ -96,7 +96,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['end_button'])) {
 	}
 	// already paid for; process is finished
 	elseif(!$ticket->remaining_balance()) {
-		$ticket->edit_transaction_information(array("status_id" => $status['charge_to_acct'], "notes" => $ticket_notes));
+		//commented out to avoid error for testing
+		//$ticket->edit_transaction_information(array("status_id" => $status['charge_to_acct'], "notes" => $ticket_notes));
 		$_SESSION['success_msg'] = 	"There is no balance on the ticket. It is finished and ".
 											"learner is good to go.";
 		header("Location:./lookup.php?trans_id=$trans_id");

@@ -128,6 +128,36 @@ class Users {
 		}
 	}
 
+
+	//store new settings string
+	//O=on ticket opening
+	//R=ticket ready (button press)
+	//B=balance due
+	//C=ticket closed
+	//E=import info from wait queue
+	public function setAlerts($sett){
+		global $mysqli;
+		//store reverse to save space ie default null means all on
+		//any letters stored means those are off
+		$settings_all_off = array('O', 'R', 'B', 'C', 'W');
+		$new_settings = implode("", array_diff($settings_all_off, $sett));
+
+		//echo $new_settings;
+
+		if ($mysqli->query("
+            UPDATE `users`
+            SET `a_set`= '$new_settings'
+            WHERE `operator` = $this->operator;
+        "))
+        {
+
+        return; //$mysqli->insert_id;
+        } else {
+            return ("<div class='alert alert-danger'>Error Setting Alerts</div>");
+        }
+
+	}
+
 	public function getAccounts(){
 		return $this->accounts;
 	}
@@ -229,27 +259,33 @@ class Users {
 		return $tickets;
 	}
 
-	//get most recently started ticket
+	//get most recently started ticket with a balance
 	public function recentTicket(){
 		// global $ticketz, $datetime1, $ticknum, $tickn;
 		$ticketz = $this->history();
-		$datetime1 = new DateTime($ticketz[0][2]); 
-		// echo $datetime1->format('Y-m-d H:i:s');
+		// $datetime1 = new DateTime($ticketz[0][2]); 
+		// // echo $datetime1->format('Y-m-d H:i:s');
 		
-		$tickert = $ticketz[0];
+		//$tickert = $ticketz[0];
 
-		foreach ($ticketz as $tick){
-			$datetime2= new DateTime($tick[2]);
-			// echo $datetime2->format('Y-m-d H:i:s');
+		// foreach ($ticketz as $tick){
+		// 	$datetime2= new DateTime($tick[2]);
+		// 	// echo $datetime2->format('Y-m-d H:i:s');
 
-			if ($datetime2 > $datetime1){
-				$datetime1 = $datetime2;
-				$tickert = $tick;
-			}
+		// 	if ($datetime2 > $datetime1){
+		// 		$datetime1 = $datetime2;
+		// 		$tickert = $tick;
+		// 	}
 			
-		}
+		// }
 		
-		return $tickert;
+		// return $tickert;
+
+		foreach($ticketz as $tick)
+		{
+			if(isset($tick[4]))
+				return $tick;
+		}
 
 	}
 	

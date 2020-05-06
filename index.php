@@ -328,8 +328,9 @@ function advanceNum($i, $str){
 												echo $ticket->getDevice()->getDevice_desc();
 											} ?>
 										</td>
-										<?php if ($staff && ($staff->getRoleID() >= $sv['LvlOfStaff'] || $staff->getOperator() == $ticket->getUser()->getOperator())) { ?>
+										<?php if ($staff && ($staff->getRoleID() >= $sv['LvlOfStaff'])) { ?>
 											<td align="center">
+											<button class="btn btn-primary" onclick="sendAlertMessage(<?php echo $row["trans_id"]; ?> , 'Your Ticket Number <?php echo $row["trans_id"];?> for the <?php echo $row["device_desc"]; ?> is now Ready', 0)"> Send Alert</button>
 												<?php if ($row["status_id"] == $status["moveable"]) { ?>
 													<button class="btn btn-primary" onclick="endTicket(<?php echo "$row[trans_id],'$row[device_desc]','".$staff->getLong_close()."'"; ?>)">End</button>
 												<?php } else { ?>

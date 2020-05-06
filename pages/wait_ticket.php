@@ -533,21 +533,21 @@ include_once ($_SERVER['DOCUMENT_ROOT'].'/pages/footer.php');
             }
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    console.log("response"+this.responseText);
+                    console.log(this.responseText);
                     if (this.responseText == "warn"){
                         console.log("Warning, Learner has on going print");
                         sBtn.disabled = true;
                         sBtn.classList.remove("btn-primary");
                         trV.hidden = false;
-                    } else if(this.responseText == "no_need") {
+                    } else /*if(this.responseText == "no_need")*/ {
                         sBtn.disabled = false;
                         sBtn.classList.add("btn-primary");
                         trV.hidden  = true;
-                    } else {
-                        console.log("Invalid Search Criteria");
-                        sBtn.disabled = true;
-                        sBtn.classList.remove("btn-primary");
-                    }
+                    } //else {
+                    //     console.log("Invalid Search Criteria");
+                    //     sBtn.disabled = true;
+                    //     sBtn.classList.remove("btn-primary");
+                    // }
                 }
             };
 

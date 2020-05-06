@@ -96,7 +96,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['end_button'])) {
 	}
 	// already paid for; process is finished
 	elseif(!$ticket->remaining_balance()) {
-		//commented out to avoid error for testing
+		//***********Test changes** */
+		//1 line commented out to avoid error for testing
+		///Uncomment the folowing code line if implementing on fabapp server, no other changes needed
 		//$ticket->edit_transaction_information(array("status_id" => $status['charge_to_acct'], "notes" => $ticket_notes));
 		$_SESSION['success_msg'] = 	"There is no balance on the ticket. It is finished and ".
 											"learner is good to go.";

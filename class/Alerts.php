@@ -1,5 +1,8 @@
 <?php
-
+/*Alerts class for handling functions with transaction notifications (alerts) and alerts table
+*
+*
+*/
 
 include_once ($_SERVER['DOCUMENT_ROOT']."/class/site_variables.php");
 
@@ -97,6 +100,7 @@ class Alerts{
             }
     }
 
+    //attach transaction id to existing alert
     public static function attachTran($operator, $d_id, $trans_id){
         global $mysqli;
         
@@ -114,6 +118,7 @@ class Alerts{
 
     }
 
+    //remove alert information given transaction id
     public static function removeAlertWithTrans($trans_id){
         global $mysqli;
 
@@ -131,6 +136,7 @@ class Alerts{
 
     }
 
+    //remove alert information given operator
     public static function removeAlertWithOp($operator){
         global $mysqli;
 
@@ -148,6 +154,7 @@ class Alerts{
 
     }
 
+    //remove all alert information
     public static function removeAllAlerts(){
         global $mysqli;
 
@@ -165,6 +172,7 @@ class Alerts{
 
     }
 
+    //remove all alerts older than 24 hours old
     public static function removeOldAlerts()
     {
         global $mysqli;
@@ -183,6 +191,8 @@ class Alerts{
     }
 
     //function to check if user has notification allowed
+    //settingLetter corresponds with notification being sent
+    //O for ticket opening, C for ticket closing, B for ticket balance, R for ticket ready (button)
     public static function sendAlert($settingLetter, $t_id, $subject, $message){
         global $mysqli;
         $result = $mysqli->query("
@@ -207,6 +217,7 @@ class Alerts{
     }
         
 
+    //function to send an alert given transaction id
     public static function sendAlertWithTran($trans_id, $subject, $message){
         global $mysqli;
         
@@ -250,6 +261,7 @@ class Alerts{
             return ("<div class='alert alert-danger'>Could not find alerts entry to send to</div>");
     }
 
+    //function to tell wether a given operator-device id combination is in the alerts table
     public static function inAlerts($op, $de_id){
         global $mysqli;
         return mysqli_num_rows($mysqli->query(" 
@@ -258,6 +270,8 @@ class Alerts{
                                 WHERE `Operator`=$op AND `dev_id`=$de_id;"))>0;
     }
 
+    //function to retreive the settings tring from the users table
+    //if a letter is in the string, that means that the user has it set to not receive notifications of that type
     public static function getSettings($op){
         global $mysqli;
 

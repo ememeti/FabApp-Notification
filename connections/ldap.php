@@ -10,17 +10,17 @@ function AuthenticateUser($netid, $password) {
     //switch case to return roles
     switch ($netid){
         case "learner":
-            return "1000000002";
+            return "1000000002"; //2
         case "community":
-            return "1000000004";
+            return "1000000004"; //4
         case "service":
-            return "1000000007";
+            return "1000000007"; //7
         case "staff":
-            return "1000000008";
+            return "1000000008"; //8
         case "super":
-            return "1000000009";
+            return "1000000009"; //11
         case "admin":
-            return "1000000010";
+            return "1000000010"; //10
         // default:
         //     return "1000000001";
     }

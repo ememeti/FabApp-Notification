@@ -136,6 +136,8 @@ function sendManualMessage(q_id, message, loc){
     }
 }
 
+//Method to send an alert via the alerts table when the alert by transaction is pressed
+//Calls the sendAlert subpage to handle therequest in php
 function sendAlertMessage(t_id, message, loc) {
     if (confirm("You are about to send a notification to a Transaction user. Click OK to continue or CANCEL to quit.")) {
         if (loc == 0) {

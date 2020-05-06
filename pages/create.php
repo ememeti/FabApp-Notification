@@ -98,8 +98,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ticketBtn'])) {
 	$email = filter_input(INPUT_POST, 'op-email');
 	$phone = filter_input(INPUT_POST, 'op-phone');
 	$carrier = filter_input(INPUT_POST, 'carrier_name');
-
-	Alerts::newAlert($operator->operator, $device->device_id, $phone, $carrier, $email);
+	if(!empty($email) || !empty($phone))
+		echo Alerts::newAlert($operator->operator, $device->device_id, $phone, $carrier, $email);
 
 	// start ticket
 	if($device->device_group->is_pay_first) pay_first_ticket($operator, $device, $p_id, $staff);
@@ -376,6 +376,9 @@ function exit_if_error($error, $redirect=null) {
 										</td>
 									</tr>
 								<?php } ?>
+								<tr>
+									<td align="center">***Leave the Following Fields Blank to Import Contact info from Wait Queue***</td>
+								</tr>
 								<tr>
 									<td><a href="#" data-toggle="tooltip" data-placement="top" title="The email of the person that you will issue a ticket for">(Optional) Email</a></td>
 									<td><input type="text" name="op-email" id="op-email" class="form-control" placeholder="email address" maxlength="100" size="10" value="<?php echo $em1;?>" tabindex="1"/></td>

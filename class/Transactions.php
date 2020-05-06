@@ -161,8 +161,22 @@ class Transactions {
 
 
 		$this->t_end = date("Y-m-d H:i:s");
-		Alerts::removeAlertWiithTrans($this->trans_id);
-		return $this->update_transaction();  // return error or null (no error)
+
+		Alerts::sendAlert('C', $this->trans_id, "FabApp Notification: Ticket Closed", "Ticket number $this->trans_id is now closed" );
+		Alerts::removeAlertWithTrans($this->trans_id);
+
+		$t_i = $this->trans_id;
+		//for testing since update_transaction throws error 
+		if ($result = $mysqli->query("
+			DELETE FROM transactions 
+				WHERE trans_id = $t_i;
+        "))
+        {
+			return;
+		}
+		else
+			return ("<div class='alert alert-danger'>Error Deleting Transaction</div>");
+		//return $this->update_transaction();  // return error or null (no error)
 	}
 	
 

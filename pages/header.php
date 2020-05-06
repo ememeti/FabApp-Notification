@@ -231,7 +231,7 @@
 								<li><a style="background-color:black;color:white;text-align:center;">Notifications</a></li>
 
 								<!-- wait queue info body -->
-								<li><a href="#" style="text-align:left">  Wait Queue
+								<li><a href="#" style="text-align:left">  Wait Queue</a></li>
 								<li class="divider"></li>
 
 								<?php $operator = $staff->getOperator();
@@ -243,7 +243,7 @@
 														ORDER BY Q_id;
 										")) {
                                 $count = 0;
-                                while ($row = $result->fetch_assoc()) { ?></a></li>
+                                while ($row = $result->fetch_assoc()) { ?>
 								<li>
 									<a>Queue Number: <?php echo($row['Q_id']) ?></a>
 								</li>
@@ -262,28 +262,33 @@
 
 								<!-- balance info body -->
 								<?php if(isset($recTicket)){ ?>
-								<li><a href="#" style="text-align:left">Most Recent Ticket: <?php echo $recTicket[0];?></a></li>
+								<li><a href="#" style="text-align:left">Most Recent Ticket With balance: <?php echo $recTicket[0]; echo $recTicket[1]; ?></a></li>
 								<li class="text-center">
 									<a style="text-align:center">Status: <?php echo $recTicket[3]; if(isset($recTicket[4])){?>   Balance: <?php echo $recTicket[4];}?> </a>
 								</li>
 
+								<?php }?>
+								<li><a href="#" style="text-align:left"> Open Tickets</a></li>
 								<li class="divider"></li>
-								<?php } 
-								foreach($staff->history() as $ro){ ?>
-								<li><a href="#" style="text-align:left"> Ticket # <?php echo $ro[0];?></a></li>
+
+								<?php if ($result = $mysqli->query("
+											SELECT *
+                                                        FROM transactions T
+														LEFT JOIN devices D ON T.d_id = D.d_id
+														LEFT JOIN status S on S.status_id = T.status_id
+														WHERE t_end IS NULL and T.Operator = $operator
+														ORDER BY trans_id;
+										")) {
+                                $count = 0;
+								while ($ro = $result->fetch_assoc()) { ?>
+								<li><a href="#" style="text-align:left"> Ticket # <?php echo $ro['trans_id']; ?></a></li>
 								<li class="text-center">
-									<a style="text-align:center">Status: <?php echo $ro[3]; if(isset($ro[4])){?>   Balance: <?php echo $ro[4];}?> </a>
+									<a style="text-align:center"><?php echo $ro['device_desc']; ?> Status: <?php echo $ro['message']?> </a>
 								</li>
 								<li class="divider"></li>
-								<?php } ?>
-
-
-								<!-- 3d print status info body -->
-								<li><a href="#" style="text-align:left">3D Print Status: 3 hours ago</a></li>
-								<li class="text-center">
-									<a style="text-align:center">Ticket 49,998: In Storage</a>
-								</li>
-								<li class="divider"></li>
+								<?php if (++$count ==4)
+									break;}} 
+									?>
 
 								<!-- button to change notification settings -->
 								<li>

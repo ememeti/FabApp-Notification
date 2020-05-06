@@ -25,7 +25,6 @@ $auto_off = true; ///try changing this
 $device_mats = Materials::getDeviceMats(2);
 
 
-
 ?>
 
 <!-- Title on the tab -->
@@ -54,128 +53,56 @@ $device_mats = Materials::getDeviceMats(2);
             <div class="panel panel-default">
                 <!-- /.panel-heading start-->
                 <div class="panel-heading">
-                    Settings
+                    Ticket Notification Settings
                 </div>
                 <!-- /.panel-heading end -->
 
                 <!-- panel body start -->
                 <div class="panel-body collapse in" id="swapPanel">
-                    <div class="form-check">
-                        <div>
-                            <h6>Receive Alerts By:</h6>
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                Text Message
-                            </label>
+                    Receive Notifications -
+                    <form action="" method="post">
+                        <input type="checkbox" name="formSettings[]" value="O" checked/>When Ticket is Opened<br />
+                        <input type="checkbox" name="formSettings[]" value="R" checked/>When Ticket is Ready<br />
+                        <input type="checkbox" name="formSettings[]" value="B" checked/>When Ticket has a Balance Due<br />
+                        <input type="checkbox" name="formSettings[]" value="C" checked/>When Ticket Closed<br />
+                        <input type="checkbox" name="formSettings[]" value="W" checked/>Import Contact info from Wait Queue
 
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                Email
-                            </label>
+                        <div class = "row">
+                            <input type="submit" name="formSubmit" value="Submit" class="btn btn-primary" align="center" />
                         </div>
-                        <div>
-                            <h6>Receive Alerts When:</h6>
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                Change in Wait Queue Position
-                            </label>
-
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                Change in Ticket Balance
-                            </label>
-                        </div>
-
-                        <div>
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                Change in 3rd Print Status
-                            </label>
-
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                On Ticket Creation
-                            </label>
-                        </div>
-
-                        <div>
-                            <h6>Alert Receiving Information: </h6>
-                            <form>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Phone number:</label>
-                                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12">
-                                    <small>Format: 123-456-7890</small>
-                                </div>
-
-                                <a class="btn btn-primary pull-right" href="/pages/notifications.php" role="button">Go Back</a>
-                                <a class="btn btn-primary pull-right" href="/pages/notifications.php" role="button">Save</a>
-                            </form>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <!-- panel body end -->
 
 
 
-            </div>
             <!-- panel end -->
         </div>
-        <!-- /.col-md-8 -->
-    </div>
-    <div class="row">
-        <div class="col-sm-9 form-group">
-            <form method="post"> 
-                <?php
-                    if(isset($_POST['sendmail'])) {
-                        // require '../vendor/phpmailer/PHPMailerAutoload.php';
-
-                        // define('EMAIL', ''); // add personal details of the sender's email
-                        // define('PASS', ''); // add personal details of the sender's email password
-
-                        // $mail = new PHPMailer;
-
-                        // $mail->SMTPDebug = 4;                                 // Enable verbose debug output
-
-                        // $mail->isSMTP();                                      // Set mailer to use SMTP
-                        // $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
-                        // $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                        // $mail->Username = EMAIL;                              // SMTP username
-                        // $mail->Password = PASS;                               // SMTP password
-                        // $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                        // $mail->Port = 587;                                   // TCP port to connect to
-
-                        // $mail->setFrom(EMAIL, 'Email Test');
-                        // //$mail->addAddress($_POST['exampleInputEmail1']);     // Add a recipient
-                        // $mail->addAddress('memeti.endrit@gmail.com');
-
-                        // $mail->addReplyTo(EMAIL);
-
-                        // //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-                        // //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-                        // $mail->isHTML(true);                                  // Set email format to HTML
-
-                        // $mail->Subject = 'Here is the subject';
-                        // $mail->Body    = '<div style="border:2px solid red;"This is the HTML message body <b>in bold!</b></div>';
-                        // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-                        // if(!$mail->send()) {
-                        //     echo 'Message could not be sent.';
-                        //     echo 'Mailer Error: ' . $mail->ErrorInfo;
-                        // } else {
-                        //     echo 'Message has been sent';
-                        // }
-
-                        Notifications::sendNotification('1564', 'Test Subject', 'Test Message', 1);
-                    }
-                ?>
-                <input type="submit" name="sendmail" class="btn btn-lg btn-success btn-block pull-right" value="Send Mail"/>
-            </form>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-trash fa-fw"></i>Remove Alert Info
+            </div>
+                    <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div style="text-align: center">
+                    <form action="notifications_settings.php" method="post">
+                        <button type = submit class="btn btn-danger" name="selfRemoveBtn" >
+                                Remove My Contact Info from All My Tickets
+                        </button>
+                        <?php if($staff->getRoleID() >= $sv['clear_queue']) { ?>
+                        <button type = submit class="btn btn-danger" name="alertRemoveBtn">
+                                Clear All Transaction Alert Profiles
+                        </button>
+                        <button type = submit class="btn btn-danger" name="oldRemoveBtn" >
+                                Clear All Alert Profiles Older than 24 hours
+                        </button>
+                        <?php } ?>
+                    </form>
+                </div>
+            </div>
+            <!-- /.panel-body -->
         </div>
+        <!-- /.col-md-8 -->
     </div>
 </div>
 <!-- /#page-wrapper end -->
@@ -184,6 +111,31 @@ $device_mats = Materials::getDeviceMats(2);
 <!--  -->
 
 <?php
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(isset($_POST['formSubmit']))
+    {
+        echo $staff->setAlerts($_POST['formSettings']);
+    }
+    if (isset($_POST['selfRemoveBtn']))
+    {
+        echo Alerts::removeAlertWithOp($staff->getOperator());
+    }
+    if($staff->getRoleID() >= $sv['clear_queue'])
+    {
+        if(isset($_POST['alertRemoveBtn']))
+        {
+            echo Alerts::removeAllAlerts();
+        }
+        elseif(isset($_POST['oldRemoveBtn']))
+        {
+            echo Alerts::removeOldAlerts();
+        }
+    }
+}
+
+
+
 //Standard call for dependencies
 include_once($_SERVER['DOCUMENT_ROOT'] . '/pages/footer.php');
 ?>

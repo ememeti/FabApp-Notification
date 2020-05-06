@@ -56,7 +56,6 @@ $operator = $staff -> getOperator();
                         <thead>
                             <tr class="tablerow">
                                 <th align="right">Ticket</th>
-                                <th>Device</th>
                                 <th>Start Time</th>
                                 <th>Status</th>
                                 <th>Amount</th>
@@ -65,7 +64,6 @@ $operator = $staff -> getOperator();
                         <?php foreach ($staff->history() as $ticket){ ?>
                             <tr>
                                 <td align="Center"><a href="/pages/lookup.php?trans_id=<?php echo $ticket[0];?>"><?php echo $ticket[0];?></a></td>
-                                <td><?php echo $ticket[1];?></td>
                                 <td><?php echo $ticket[2];?></td>
                                 <td><?php echo $ticket[3];?></td>
                                 <td><?php echo $ticket[4];?></td>

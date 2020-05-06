@@ -539,10 +539,13 @@ include_once ($_SERVER['DOCUMENT_ROOT'].'/pages/footer.php');
                         sBtn.disabled = true;
                         sBtn.classList.remove("btn-primary");
                         trV.hidden = false;
+        //if implementing on fabapp server, uncomment follwing line and delete else statement
                     } else /*if(this.responseText == "no_need")*/ {
                         sBtn.disabled = false;
                         sBtn.classList.add("btn-primary");
                         trV.hidden  = true;
+                    //********** */
+                    //if implementing on fabapp, uncomment following lines
                     } //else {
                     //     console.log("Invalid Search Criteria");
                     //     sBtn.disabled = true;

@@ -166,6 +166,7 @@ class Transactions {
 		Alerts::removeAlertWithTrans($this->trans_id);
 
 		$t_i = $this->trans_id;
+		//******************Test block do not implement**************** */
 		//for testing since update_transaction throws error 
 		if ($result = $mysqli->query("
 			DELETE FROM transactions 
@@ -176,6 +177,7 @@ class Transactions {
 		}
 		else
 			return ("<div class='alert alert-danger'>Error Deleting Transaction</div>");
+		//******************If implementing comment above block and uncomment following comment */
 		//return $this->update_transaction();  // return error or null (no error)
 	}
 	

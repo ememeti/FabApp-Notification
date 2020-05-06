@@ -95,8 +95,10 @@ class Notifications {
         //     return false;
         // }
 
-       
-
+       //Above code commented out and bleow code added so that this function can use php mailer
+       //allowing for testing without making email server on local machine(s)
+       //this is not needed on fabapp server since mail server is already set up.
+//********************For testing change only */
         require_once(realpath($_SERVER["DOCUMENT_ROOT"]) .'/vendor/phpmailer/PHPMailerAutoload.php');
         $mail = new PHPMailer;
 
@@ -119,6 +121,7 @@ class Notifications {
         }
         else
             return false;
+    //********************testing block end****************** */
     }
     
     public static function setLastNotified($q_id){
